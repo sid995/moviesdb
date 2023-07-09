@@ -5,6 +5,10 @@ use uuid::Uuid;
 pub type FilmError = String;
 pub type FilmResult<T> = Result<T, FilmError>;
 
+mod postgres_film_repository;
+
+pub use postgres_film_repository::PostgresFilmRepository;
+
 #[async_trait]
 pub trait FilmRepository: Send + Sync + 'static {
     async fn get_films(&self) -> FilmResult<Vec<Film>>;
