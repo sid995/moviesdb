@@ -1,3 +1,6 @@
 target/
 Secrets*.toml
 api.http
+static/
+dist/
+node_modules/
